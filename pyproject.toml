@@ -1,0 +1,34 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "bitcoin-api-l402"
+version = "0.1.0"
+description = "L402 Lightning payment extension for Satoshi API"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "Bortlesboat" }]
+keywords = ["bitcoin", "lightning", "l402", "api", "payments", "macaroon"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Framework :: FastAPI",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Office/Business :: Financial",
+]
+dependencies = [
+    "fastapi>=0.115.0",
+    "httpx>=0.27.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Bortlesboat/bitcoin-api-l402"
+Repository = "https://github.com/Bortlesboat/bitcoin-api-l402"
+
+[project.optional-dependencies]
+dev = ["pytest", "httpx", "pytest-asyncio"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bitcoin_api_l402"]
